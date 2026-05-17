@@ -144,10 +144,31 @@ Visual comparison on **Swirski p1-left, Frame 206** (Baseline IoU: 0.4530 → FA
 
 ---
 
-## 📖 Documentation
+## 🚀 Quick Start (User Guide)
 
-- **[Final Research Report (Korean)](docs/final_research_report.md)** — Full experiment log including hypotheses, ablation studies, trial-and-error records, and per-case analysis.
+### 1. Requirements
+```bash
+pip install -r requirements.txt
+```
 
+### 2. Prepare Weights
+Due to file size limits, the pre-trained weights (`best_model.pth`, 421MB) are not included in this repository. 
+Download the weights from the [Releases](#) page and place them in the following directory structure:
+```text
+models_transunet/
+└── best_model.pth
+```
+
+### 3. Prepare Datasets
+Prepare the evaluation datasets and place them in the root directory:
+* `LPW/`: Raw images for the LPW dataset
+* `Pupils_in_the_wild_improved/`: Ground truth masks
+
+### 4. Run Inference
+```bash
+python eval_lpw_skipfilter.py
+```
+This script applies the complete **FAST-TransUNet pipeline** (Skip Filter + Hybrid Ellipse) to the LPW dataset. It will automatically calculate metrics and generate visual overlays in the `LPW_tables/` and `LPW_overlays_skipfilter/` directories.
 ---
 
 ## 📜 Citation
