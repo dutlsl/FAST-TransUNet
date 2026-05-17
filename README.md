@@ -153,7 +153,7 @@ pip install -r requirements.txt
 
 ### 2. Prepare Weights
 Due to file size limits, the pre-trained weights (`best_model.pth`, 421MB) are not included in this repository. 
-Download the weights from the [Releases](#) page and place them in the following directory structure:
+Download the weights from the [GitHub Releases](https://github.com/dutlsl/FAST-TransUNet/releases/download/v1.0.0/best_model.pth) and place them in the following directory structure:
 ```text
 models_transunet/
 └── best_model.pth
